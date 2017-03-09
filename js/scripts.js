@@ -20,6 +20,11 @@ $(document).ready(function () {
 		$("#section-1").fadeOut();
 		$("#section-2").fadeIn();
 		$("#player2-btn").hide();
+		swal({
+			title: "Get Ready!",
+			text: "Play Pig Dice!!!",
+			imageUrl: "assets/images/pig.jpg"
+		});
 
 		$("#roll1").click(function () {
 			var scoreHolder = randInt();
@@ -37,7 +42,7 @@ $(document).ready(function () {
 		$("#hold1").click(function () {
 			player1.finalScore += player1.turnScore;
 			if (player1.finalScore >= 100) {
-				alert("Player 1: " + player1.name + " wins");
+				sweetAlert("Player 1: " + player1.name, " wins", "success");
 				player1.finalScore = 0;
 				player1.turnScore = 0;
 				player2.turnScore = 0;
@@ -74,7 +79,7 @@ $(document).ready(function () {
 		$("#hold2").click(function () {
 			player2.finalScore += player2.turnScore;
 			if (player2.finalScore >= 100) {
-				alert("Player 2: " + player2.name + " wins");
+				sweetAlert("Player 2: " + player2.name, " wins", "success");
 				player1.finalScore = 0;
 				player1.turnScore = 0;
 				player2.turnScore = 0;
